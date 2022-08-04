@@ -3,8 +3,8 @@ name: FEATURE-BRANCH - Build and Test
 on:
   push:
 
-env:
-  TEST: test
+# env:
+#   TEST: test
 jobs:
   node-build-deploy:
     runs-on: ubuntu-latest
