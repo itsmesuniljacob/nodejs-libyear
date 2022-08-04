@@ -1,0 +1,75 @@
+{
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "dev-fastify": "nodemon -w server/fastify.js | pino-pretty -c -t --levelKey severity",
+      "build": "next build",
+      "start-next": "next start",
+      "start": "node server/fastify.js",
+      "lint": "next lint",
+      "lint:fix": "next lint --fix",
+      "prepare": "husky install",
+      "test": "jest --watch .",
+      "test:ci": "jest --ci --coverage ."
+    },
+    "dependencies": {
+      "@tailwindcss/line-clamp": "^0.2.2",
+      "apminsight": "^2.3.1",
+      "appoptics-apm": "^10.2.1",
+      "dotenv": "^10.0.0",
+      "fastify": "^3.23.1",
+      "fastify-env": "^2.1.1",
+      "fastify-http-proxy": "^6.2.1",
+      "fastify-nextjs": "^7.0.0",
+      "lodash.clonedeep": "^4.5.0",
+      "lodash.debounce": "^4.0.8",
+      "lodash.get": "^4.4.2",
+      "lodash.isempty": "^4.4.0",
+      "next": "latest",
+      "pino": "^7.6.2",
+      "prop-types": "^15.7.2",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "react-slick": "^0.28.1",
+      "slick-carousel": "^1.8.1"
+    },
+    "devDependencies": {
+      "@tailwindcss/forms": "^0.3.4",
+      "@testing-library/jest-dom": "^5.15.0",
+      "@testing-library/react": "^12.1.2",
+      "@testing-library/user-event": "^13.5.0",
+      "autoprefixer": "^10.2.6",
+      "babel-jest": "^27.3.1",
+      "babel-plugin-transform-dynamic-import": "^2.1.0",
+      "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+      "eslint": "^7.32.0",
+      "eslint-config-next": "^12.0.3",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-jest": "^25.7.0",
+      "eslint-plugin-testing-library": "^5.0.0",
+      "husky": "^7.0.4",
+      "identity-obj-proxy": "^3.0.0",
+      "jest": "^27.3.1",
+      "jest-next-dynamic": "^1.0.1",
+      "jest-sonar-reporter": "^2.0.0",
+      "lint-staged": "^11.2.6",
+      "nodemon": "^2.0.15",
+      "pino-pretty": "^4.5.0",
+      "postcss": "^8.3.5",
+      "react-test-renderer": "^17.0.2",
+      "tailwindcss": "^2.2.4"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.js|*.jsx": [
+        "eslint --cache",
+        "npx prettier --check",
+        "npm run test:ci"
+      ]
+    }
+  }
+  
