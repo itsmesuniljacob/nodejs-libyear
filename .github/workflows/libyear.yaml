@@ -28,4 +28,4 @@ jobs:
         run: npm install
 
       # Calculate libyear
-      - uses: s0/libyear-node-action@develop
+      - uses: s0/libyear-node-action
